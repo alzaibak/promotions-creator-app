@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http//www.thymeleaf.org">
 <head>
@@ -7,7 +8,7 @@
 <body>
 
 	<h1> Admin connexion</h1>
-	<form th:action="@/login" th:object="${loginForm}" method ="post">
+	<form th:action="@{/login}" th:object="${loginForm}" method ="post">
 		<label for = "username"> Nom de l'utilisateur</label>
 		<input type= "text" id= "username" name="username" autofocus ="autofocus"/>
 		
