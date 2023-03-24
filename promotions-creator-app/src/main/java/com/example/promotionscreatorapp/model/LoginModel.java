@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="admin_Table")
+@Table(name="admin")
 public class LoginModel {
 
 	@Id

@@ -8,11 +8,9 @@ import com.example.promotionscreatorapp.model.LoginModel;
 @Service
 public class LoginService {
 	
-	@Autowired
 	private final LoginRepository loginRepository;
 
 	public LoginService(LoginRepository loginRepository) {
-		super();
 		this.loginRepository = loginRepository;
 	}
 

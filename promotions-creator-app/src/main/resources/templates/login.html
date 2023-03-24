@@ -7,14 +7,18 @@
 <link rel="stylesheet" href="css/style.css"><link>
 </head>
 <body>
-		  <div class="wrapper">
-		    <form th:action="@{/login}" th:object="${loginForm}" method ="post" class="form-signin">       
-		      <h2 class="form-signin-heading">Admin connexion</h2>
-		      <input type="text" class="form-control" name="username" placeholder="Nom de l'utilisateur" required="" autofocus="" />
-		      <input type="password" class="form-control" name="password" placeholder="Mot de passe" required=""/>      
-		      <button class="btn btn-lg btn-primary btn-block" type="submit">connexion</button>   
-		    </form>
-		  </div>
+<div class="login">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Admin connexion</h2>
+
+  <form th:action="login"  method="post" th:object="${loginRequest}" class="login-container">
+    <input  name="email" type="text" placeholder="Email">
+    <input name= "password"type="password" placeholder="Password" >
+    <button type="submit" name="sign-in" value="login">connexion</button>
+  </form>
+</div>
 </body>
 </html>
 
+<
