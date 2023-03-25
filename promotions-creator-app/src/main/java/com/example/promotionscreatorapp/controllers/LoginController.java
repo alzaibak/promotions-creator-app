@@ -36,34 +36,11 @@ public class LoginController {
 		System.out.println("login:" + loginModel);
 		LoginModel authenticated = loginService.userLogin( loginModel.getEmail(), loginModel.getPassword());
 		if (authenticated != null) {
-			System.out.println("done");
 			model.addAttribute( "userLogin", authenticated.getEmail());
 			return "admin";
 		}else {
-			System.out.println("error");
-			return "index";
+			return "errorPage";
 		}
 	}
 	
-	
-	//to get login page
-	//@RequestMapping(value= "/login", method=RequestMethod.GET)
-	//public String getLoginForm() {
-	//	//return html page name
-		//return "login";
-	//}//
-	
-	//checking for login crediantials
-	//@RequestMapping(value= "/login", method=RequestMethod.POST)
-	//public String login(@ModelAttribute(name="loginForm") LoginFormClass LoginFormClass, Model model) {
-	//	String username = LoginFormClass.getUsername();
-	//	String password = LoginFormClass.getPassword();
-		
-		//if("admin".equals(username) && "admin".equals(password)){
-		//	return "home";
-		//}
-		//model.addAttribute("mot de passe incorrect", true);
-		//return "login";
-
-	//}
 }
