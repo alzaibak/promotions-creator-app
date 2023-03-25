@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Produit</title>
+<link rel="stylesheet" href="css/style.css"><link>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+ <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a th:href="@{/}">produits</a></li>
+                <li><a th:href="@{/login}">Admin</a></li>
+                <li><a th:href="@{/productAdd}">ajouter un produits</a></li>
+                <li><a href="#">ajouter un promotion</a></li>
+                
+            </ul>
+            <h1 class="logo">Entreprise</h1>
+        </div>
+    </nav>
+	
+	<section class="section-products">
+		<div class="container">
+				<div class="headers">
+				<div>
+								<div class="header">
+										<h3>Produit en vedette</h3>
+										<h2>Produits populaires</h2>
+								</div>
+				</div>
+				<div class="row">
+				<div style="width: 100%; margin-bottom: 30px">
+			<div id="buttons">
+        		<button class="button-value" id="all">All</button>
+        		<button class="button-value" onclick="filterProduct('Topwear')">Bottomwear</button>
+        		<button class="button-value" onclick="filterProduct('Bottomwear')">Bottomwear</button>
+        		<button class="button-value" onclick="filterProduct('Jacket')">Jacket </button>
+    	  </div>
+				</div>
+				</div>
+				
+		</div>
+				<div class="row">
+						<!-- Single Product -->
+						<div id = "filters" th:each="product: ${products}" class="col-md-6 col-lg-4 col-xl-3" th:value="${product.category}">
+								<div id="product-1" class="single-product">
+										<div class="imageAndDiscount">
+										<img th:src ="${product.image}" class ="product-image"/>
+											<span class="discount">15% off</span>
+										</div>
+										<div class="part-2">
+												<h3  th:text="${product.label}" class="product-title"></h3>
+												<p th:text="${product.description}"><p/>
+												<h4 th:text="${product.price}" class="product-old-price"></h4>
+												<h4 th:text="${product.price}"></h4>
+										</div>
+								</div>
+						</div>
+						
+				</div>
+						
+</section>
+ <script>
+ 	const options = div.querySelectorAll('.value');
+ 	document.querySelectorAll('[data-foo="value"]');
+    var buttons= document.getElementsByTagName("button").onclick();
+    
+    switch(buttons){
+        case "all":
+            a.play();
+            document.getElementById("letter").innerHTML = "A";
+            document.getElementById("morse").innerHTML = ".-";
+            break;
+        case "b":
+            b.play();
+            document.getElementById("letter").innerHTML = "B";
+            document.getElementById("morse").innerHTML = "-...";
+            break;
+    };
+
+    
+    </script>
+</body>
+</html>
+
