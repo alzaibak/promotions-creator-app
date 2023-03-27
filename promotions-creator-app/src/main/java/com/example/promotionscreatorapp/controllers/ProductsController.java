@@ -18,7 +18,7 @@ public class ProductsController {
 	@Autowired
 	private ProductsService productsService;
 	
-	@GetMapping("/")
+	@GetMapping("/home")
 	public String getAll(Model model){
 		 List<ProductsModel> products =  productsService.getAll();
 		 model.addAttribute("products", products);
