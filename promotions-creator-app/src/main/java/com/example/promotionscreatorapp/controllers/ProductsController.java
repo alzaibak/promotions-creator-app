@@ -18,6 +18,11 @@ public class ProductsController {
 	@Autowired
 	private ProductsService productsService;
 	
+	@GetMapping("/")
+	public String home(){
+		 return "index";
+		
+	}
 	@GetMapping("/allproducts")
 	public String getAll(Model model){
 		 List<ProductsModel> products =  productsService.getAll();
