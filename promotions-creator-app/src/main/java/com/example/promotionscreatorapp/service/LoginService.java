@@ -27,7 +27,6 @@ public class LoginService {
 	public LoginModel userLogin(String email, String password) {
 		return loginRepository.findByEmailAndPassword(email,password).orElse(null);
 	}
-
 	
 
 }

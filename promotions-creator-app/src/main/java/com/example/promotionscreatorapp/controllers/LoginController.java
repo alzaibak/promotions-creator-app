@@ -33,7 +33,6 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login", method= RequestMethod.POST)
 	public String login(@ModelAttribute LoginModel loginModel, Model model) {
-		System.out.println("login:" + loginModel);
 		LoginModel authenticated = loginService.userLogin( loginModel.getEmail(), loginModel.getPassword());
 		if (authenticated != null) {
 			model.addAttribute( "userLogin", authenticated.getEmail());
@@ -42,5 +41,6 @@ public class LoginController {
 			return "errorPage";
 		}
 	}
+	
 	
 }
