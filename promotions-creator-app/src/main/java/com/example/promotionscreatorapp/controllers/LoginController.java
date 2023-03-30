@@ -29,7 +29,7 @@ public class LoginController {
 		LoginModel authenticated = loginService.userLogin( loginModel.getUsername(),loginModel.getPassword());
 			if(authenticated != null) {
 			model.addAttribute( "userLogin", authenticated.getUsername());
-			return "allProducts";
+			return "admin";
 		} else {
 			return "errorPage";
 		}
