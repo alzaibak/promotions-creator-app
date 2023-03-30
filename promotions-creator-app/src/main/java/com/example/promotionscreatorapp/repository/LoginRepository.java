@@ -8,6 +8,7 @@ import com.example.promotionscreatorapp.model.LoginModel;
 
 public interface LoginRepository extends JpaRepository<LoginModel, Integer>{
 	
-	Optional<LoginModel> findByEmailAndPassword(String email, String password);
+	Optional<LoginModel> findByUsernameAndPassword(String username, String password);
 
+	
 }

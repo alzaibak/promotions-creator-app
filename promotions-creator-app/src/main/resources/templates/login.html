@@ -12,10 +12,10 @@
   
   <h2 class="login-header">Admin connexion</h2>
 
-  <form th:action="login"  method="post" th:object="${loginRequest}" class="login-container">
-    <input  name="email" type="text" placeholder="Email">
+  <form th:action="@{/login}"  method="post" th:object="${loginRequest}" class="login-container">
+    <input  name="username" type="text" placeholder="Email">
     <input name= "password"type="password" placeholder="Password" >
-    <button type="submit" name="sign-in" value="login">connexion</button>
+    <button type="submit" name="sign-in" value="Sign In">connexion</button>
   </form>
 </div>
 </body>
