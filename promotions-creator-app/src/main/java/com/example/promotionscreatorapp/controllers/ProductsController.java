@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.promotionscreatorapp.model.ProductsModel;
 import com.example.promotionscreatorapp.service.ProductsService;
@@ -30,7 +32,12 @@ public class ProductsController {
 		 return "allProducts";
 		
 	}
-
+	
+	@RequestMapping(value = "/promotionadd", method= RequestMethod.GET)
+	public String addpromotion( ) {
+		return "promotionAdd";
+		}
+	
 	@GetMapping("/productAdd")
 	public String getAddProductPage(Model model){
 		model.addAttribute("productAdding", new ProductsModel());

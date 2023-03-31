@@ -17,7 +17,12 @@ public class LoginController {
 		super();
 		this.loginService = loginService;
 	}
-
+	
+	@RequestMapping(value = "/admin", method= RequestMethod.GET)
+	public String getAdmin( ) {
+		return "admin";
+		}
+	
 	@RequestMapping(value = "/login", method= RequestMethod.GET)
 	public String getLoginPage(Model model) {
 		model.addAttribute( "loginRequest", new LoginModel());
@@ -26,13 +31,14 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login", method= RequestMethod.POST)
 	public String login(@ModelAttribute LoginModel loginModel, Model model) {
-		LoginModel authenticated = loginService.userLogin( loginModel.getUsername(),loginModel.getPassword());
-			if(authenticated != null) {
-			model.addAttribute( "userLogin", authenticated.getUsername());
-			return "admin";
-		} else {
-			return "errorPage";
-		}
+		return "admin";
+
+		//LoginModel authenticated = loginService.userLogin( loginModel.getUsername(),loginModel.getPassword());
+			//if(authenticated != null) {
+			//model.addAttribute( "userLogin", authenticated.getUsername());
+		//} else {
+			//return "errorPage";
+		//}
 	}
 	
 	

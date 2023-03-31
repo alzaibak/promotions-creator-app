@@ -30,39 +30,8 @@
 				<div class="headers">
 				<div>
 								<div class="header">
-										<h3>Produit en vedette</h3>
-										<h2>Produits populaires</h2>
+										<h2>Bienvenue dans le page de control</h2>
 								</div>
-				</div>
-				<div class="row">
-				<div style="width: 100%; margin-bottom: 30px">
-			<div id="buttons">
-        		<button class="button-value" id="all">All</button>
-        		<button class="button-value" onclick="filterProduct('Topwear')">portable</button>
-        		<button class="button-value" onclick="filterProduct('Bottomwear')">camera</button>
-        		<button class="button-value" onclick="filterProduct('Jacket')">tablet </button>
-    	  </div>
-				</div>
-				</div>
-				
-		</div>
-				<div class="row">
-						<!-- Single Product -->
-						<div id = "filters" th:each="product: ${products}" class="col-md-6 col-lg-4 col-xl-3" th:value="${product.category}">
-								<div id="product-1" class="single-product">
-										<div class="imageAndDiscount">
-										<img th:src ="${product.image}" class ="product-image"/>
-											<span class="discount">15% off</span>
-										</div>
-										<div class="part-2">
-												<h3  th:text="${product.label}" class="product-title"></h3>
-												<p th:text="${product.description}"><p/>
-												<h4 th:text="${product.price}" class="product-old-price"></h4>
-												<h4 th:text="${product.price}"></h4>
-										</div>
-								</div>
-						</div>
-						
 				</div>
 						
 </section>

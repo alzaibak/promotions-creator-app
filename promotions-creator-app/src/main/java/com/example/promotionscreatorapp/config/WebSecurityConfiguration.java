@@ -28,7 +28,7 @@ public class WebSecurityConfiguration {
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/allproducts",true)
+                .defaultSuccessUrl("/admin",true)
                 .permitAll();
             
         return http.build();
