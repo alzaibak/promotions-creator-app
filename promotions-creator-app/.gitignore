@@ -2,3 +2,4 @@
 
 resources/application.properties
 
+/target/application.properties

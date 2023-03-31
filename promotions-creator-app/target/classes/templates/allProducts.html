@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Produit</title>
+<link rel="stylesheet" href="css/style.css"><link>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+ <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+             <h1 class="logo">Entreprise</h1>
+             <ul class="menu-items">
+                <li ><a th:href="@{/allproducts}">produits</a></li>
+                 <li ><a th:href="@{/login}">Admin</a></li>
+            </ul>
+         
+        </div>
+    </nav>
+	
+	<section class="section-products">
+		<div class="container">
+				<div class="headers">
+				<div>
+								<div class="header">
+										<h3>Produit en vedette</h3>
+										<h2>Produits populaires</h2>
+								</div>
+				</div>
+				<div class="row">
+				<div style="width: 100%; margin-bottom: 30px">
+			<div id="buttons">
+        		<button class="all button-value active">All</button>
+        		<button class="getCamera button-value">portable</button>
+        		<button class="getPortable button-value">Camera</button>
+        		<button class="getTablet button-value">Tablet </button>
+    	  </div>
+				</div>
+				</div>
+				
+		</div>
+				<div class="row">
+						<!-- Single Product -->
+						<div id = "filters" th:each="product: ${products}" th:classappend="${product.category}"  class="col-md-6 col-lg-4 col-xl-3 tous">
+								<div id="product-1" class="single-product">
+										<div class="imageAndDiscount">
+										<img th:src ="${product.image}" class ="product-image"/><br/>
+											<span class="discount">15% off</span>
+										</div>
+										<div class="part-2">
+												<h3  th:text="${product.label}" class="product-title"></h3>
+												<p th:text="${product.description}"><p/>
+												<h4 th:text="${product.price}" class="product-old-price"></h4>
+												<h4 th:text="${product.price}"></h4>
+										</div>
+								</div>
+						</div>
+						
+				</div>
+									</div>
+						
+</section>
+ <script>    
+ $(document).ready(function(){
+	  
+	    $(".all").click(function(){
+	      $(".tous").each(function(){
+	    	  $(".all").addClass("active");
+			    $(".getCamera").removeClass("active");
+			    $(".getPortable").removeClass("active");
+			    $(".getTablet").removeClass("active");
+	       $(this).show(400);
+	      });
+	    });
+	  
+	    $(".getCamera").click(function(){
+	      	$(".camera").each(function(){
+		    $(".getCamera").addClass("active");
+		    $(".all").removeClass("active");
+		    $(".getPortable").removeClass("active");
+		    $(".getTablet").removeClass("active");
+	       $(this).show(500);
+	        $(".portable").hide(500);
+	        $(".tablet").hide(500);
+	      });
+	    });
+	    $(".getPortable").click(function(){
+	      $(".portable").each(function(){
+	    	  	$(".getPortable").addClass("active");
+			    $(".all").removeClass("active");
+			    $(".getCamera").removeClass("active");
+			    $(".getTablet").removeClass("active");
+	       $(this).show(500);
+	        $(".tablet").hide(500);
+	        $(".camera").hide(500);
+	      });
+	    });
+	   $(".getTablet").click(function(){
+	      $(".tablet").each(function(){
+	  	  	$(".getTablet").addClass("active");
+		    $(".all").removeClass("active");
+		    $(".getCamera").removeClass("active");
+		    $(".getPortable").removeClass("active");
+	       $(this).show(500);
+	        $(".portable").hide(500);
+	        $(".camera").hide(500);
+	      });
+	    });
+	  
+	});
+	  
+    </script>
+</body>
+</html>
+
