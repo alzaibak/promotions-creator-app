@@ -1,5 +1,4 @@
 
 
-src/main/resources/application.properties
 
-/target/
+promotions-creator-app/src/main/resources/application.properties
